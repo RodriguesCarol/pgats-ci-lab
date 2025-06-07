@@ -20,14 +20,13 @@ jobs:
       - name: Checando padronizacao do código
         run: yarn lint
 
-
   unidade:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Instalando Yarn
+      - name: Instalando Yarn # yarn pode ser omitido assim como o node foi, pois já temos instalado no node
         run: npm install -g yarn
 
       - name: Instalando dependências
@@ -63,18 +62,16 @@ jobs:
       # executar os testes e2e
       - name: Executando Testes E2E
         run: yarn run e2e
-        
+
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled()}} # se o pipe não foi cancelado roda o step abaixo
-        with:   
+        with:
           name: relatorio
           path: ./playwright-report
 
   deploy:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - name: Simulação do Deploy
         run: echo "simulando o deplo com sucesso"
-
-
