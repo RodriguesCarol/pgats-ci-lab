@@ -8,6 +8,10 @@ jobs:
     
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: .
+
     steps:
 
       - uses: actions/checkout@v4
@@ -24,6 +28,6 @@ jobs:
       
       - name: Executando Testes do Trabalho
       
-        run: npx mocha trabalhos/trabalho-final.js
+        run: npx mocha CI/pgats-ci-lab/trabalhos/trabalho-final.js
 
       
