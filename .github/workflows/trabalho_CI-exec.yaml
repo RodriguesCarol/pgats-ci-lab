@@ -19,9 +19,11 @@ jobs:
 
       - name: Instalando as dependências
         run:  yarn
+
+      - name: Verificando estrutura de pastas
+        run: ls -R
       
       - name: Executando Testes do Trabalho
         run: npx mocha trabalhos/trabalho-final.js
 
-      - name: Verificando estrutura de pastas
-        run: ls -R
+      
