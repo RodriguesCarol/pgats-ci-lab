@@ -19,9 +19,7 @@ jobs:
 
       - name: Instalando as dependências
         run:  yarn
-
-      - name: Instalando do Palywright
-        run:  yarn playwright install
-
+      
       - name: Executando Testes do Trabalho
+        working-directory: ./pgats-programacao-js
         run: npx mocha trabalhos/trabalho-final.js
