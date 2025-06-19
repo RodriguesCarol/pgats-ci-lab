@@ -20,10 +20,10 @@ jobs:
       - name: Instalando as dependências
         run:  yarn
 
-      - name: Verificando estrutura de pastas
-        run: ls -R
+    
       
       - name: Executando Testes do Trabalho
+        working-directory: ./pgats-programacao-js
         run: npx mocha trabalhos/trabalho-final.js
 
       
