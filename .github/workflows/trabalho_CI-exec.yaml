@@ -21,5 +21,5 @@ jobs:
         run:  yarn
       
       - name: Executando Testes do Trabalho
-        
+        working-directory: ./pgats-programacao-js
         run: npx mocha trabalhos/trabalho-final.js
